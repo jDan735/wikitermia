@@ -4,14 +4,12 @@
 using namespace std;
 
 int main(void){
-
-    cout << "test" << endl;
-
     CURL *curl;
     CURLcode res;
 
     curl = curl_easy_init();
     if(curl) {
+        curl_easy_setopt(curl, CURLOPT_CAINFO, "cacert.pem");
         curl_easy_setopt(curl, CURLOPT_URL, "http://ru.wikipedia.org/w/api.php?action=query&prop=extracts&list=search&srsearch=%D0%BA%D0%B0%D1%86&srlimit=10&srprop=size&format=json");
 
         /* example.com is redirected, so we tell libcurl to follow redirection */
