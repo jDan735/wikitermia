@@ -1,25 +1,27 @@
 # 📚 Wikitermia
-Wikipedia client for terminal
+Unoffical Wikipedia terminal client written in Go
+![Simple usage of Wikitermia](usage_of_wikitermia.png)
 
 ## 🔨 Building
-For building enter this lines:
+For building just enter one line:
 ```bash
-cmake .
-make
-./wikitermia ban
-```
-### ⚠️ Recommendation
-* If you use `MinGW` write:
-```bash
-cmake . -G "MinGW Makefiles" 
-```
-* If you use `Haiku x86` write:
-```bash
-cmake . -CMAKE_CXX_COMPILER=g++-x86
+go build
 ```
 
-## 🔨 Dependencies
-### 📄 [nlohmann_json](https://github.com/nlohmann/json)
-JSON for Modern C++
-### 📥 [libcurl](https://github.com/curl/curl)
-libcurl is the library curl is using to do its job. It is readily available to be used by your software.
+## 🔩 Usage
+```bash
+./wikitermia -q cmake
+```
+
+## ⚙️ Options
+### `-q` (required)
+Set query
+
+### `-l`
+Set language (default: en)
+
+### `-limit`
+Set search limit (default: 1)
+
+### `-v`
+Display version
