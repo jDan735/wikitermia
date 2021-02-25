@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"log"
 )
 
@@ -22,7 +23,12 @@ type SearchResponse struct {
 }
 
 func Search(query string, limit string) (results []SearchResults){
-	url := HOST + "action=query&format=json&list=search&srlimit=" + limit + "&srsearch=" + query
+	params := url.Values{}
+	params.Add("srlimit", limit)
+	params.Add("srsearch", query)
+	rawParams := params.Encode()
+
+	url := HOST + "action=query&format=json&list=search&" + rawParams
 
 	resp, err := http.Get(url)
 
