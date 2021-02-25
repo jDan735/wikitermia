@@ -20,6 +20,11 @@ func main(){
 	options := ParseArguments(os.Args[1:])
 
 	if options.Query == "" {
+		fmt.Println("[\033[33mNOTE\033[0m]  Write query with option -q")
+		fmt.Println("[\033[33mNOTE\033[0m]  Example:")
+		fmt.Println("[\033[33mNOTE\033[0m]    wikitermia -q cmake\n")
+
+
 		fmt.Println("[\033[31mERROR\033[0m] Enter query")
 		os.Exit(1)
 	}
