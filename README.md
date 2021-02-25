@@ -1,6 +1,6 @@
 # 📚 Wikitermia
 Unoffical Wikipedia terminal client written in Go
-![Simple usage of Wikitermia](usage_of_wikitermia.png)
+![Simple usage of Wikitermia](usage.png)
 
 ## 🔨 Building
 For building just enter one line:
